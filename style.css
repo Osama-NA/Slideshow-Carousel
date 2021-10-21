@@ -1,0 +1,103 @@
+/* GLOBAL */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+.container{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* HEADER */
+.header{
+    width: 100%;
+    background-color: #000;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.emails, .socials{
+    display: flex;
+    flex-direction: row;
+}
+.emails a, .socials a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+.emails a{
+    padding-right: 1.5rem;
+}
+.socials a{
+    padding-left: 1.5rem;
+}
+.emails a i{
+    padding-right: 0.7rem;
+}
+
+/* IMAGES SLIDER CONTAINER */
+.images-slider{
+    width: 100vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-x: scroll;
+
+    scroll-snap-type: x mandatory;   /* snap mandatory on horizontal axis  */
+
+    -moz-user-select: none;    /* TO DISABLE IMAGE SELECT */
+    -webkit-user-select: none;
+    user-select: none;
+
+    -webkit-overflow-scrolling: touch;    /* Enable Safari touch scrolling physics */
+}
+.image-container{
+    position: relative;
+    max-width: 100vw;
+    min-width: 100vw;
+    overflow: hidden;
+}
+.image-container img{
+    width: 100vw;
+    height: 100%;
+    transform: scale(1.1);
+}
+.images-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.snap{
+    scroll-snap-align: center;
+}
+/* USE .zoom-animation CLASS FOR SLOW IMAGE ZOOM IN ANIMATION */
+@keyframes slowZoom{
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1.25);
+    }
+}
+
+.zoom-animation{
+    animation-name: slowZoom;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
