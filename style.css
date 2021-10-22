@@ -4,6 +4,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 
 /* MAIN CONTAINER */
 .container{
@@ -15,7 +20,7 @@
 
 /* HEADER */
 .header{
-    width: 100vw;
+    width: 100%;
     background-color: #000;
     height: 50px;
     display: flex;
@@ -51,6 +56,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .images{
     width: 100%;
@@ -69,7 +75,7 @@
 .image-container{
     position: relative;
     min-width: 100vw;
-    height: 70vh;
+    height: 75vh;
 
     display: flex;
     justify-content: center;
@@ -80,16 +86,93 @@
     width: 100%;
     height: 100%;
     transform: scale(1.1);
+    overflow: hidden;
 }
 .images-overlay{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+.images-slider-footer{
+    position: relative;
+    top: -95px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.images-slider-footer .links{
+    min-height: 95px;
+    max-height: 95px;
+    min-width: 600px;
+    width: 40vw;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+}
+.images-slider-footer .links > *{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.3rem;
+}
+.images-slider-footer .number{
+    border: 1.5px solid rgb(226, 115, 25);
+    background-color: rgb(226, 115, 25);
+}
+.images-slider-footer .quote{
+    border: 1.5px solid white;
+    margin-left: 1rem;
+}
+.images-slider-footer .number:hover{
+    border: 1.5px solid rgb(255, 255, 255);
+    background-color: rgba(226, 115, 25, 0);
+}
+.images-slider-footer .quote:hover{
+    color: rgb(226, 115, 25);
+    background-color: white;
+}
+
+@keyframes buttonHoverAnimation{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -8px;
+    }
+}
+@keyframes buttonHoverAnimationEnd{
+    0%{
+        top: -8px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.images-slider-footer .number:hover, .images-slider-footer .quote:hover{
+    animation-name: buttonHoverAnimation;
+}
+.images-slider-footer .number, .images-slider-footer .quote{
+    position: relative;
+    animation-name: buttonHoverAnimationEnd;
+    animation-duration: .25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition: all .25s ease;
+}
+
 .slider-buttons{
+    position: absolute;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -110,6 +193,4 @@
 .zoom-animation{
     animation-name: slowZoom;
     animation-duration: 10s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
 }

@@ -8,9 +8,16 @@ const imageContainers = [...document.querySelectorAll('.images > .image-containe
 
 
 // FUNCTIONS
-const addZoom = (e) => e.classList.add("zoom-animation");
-
-const removeZoom = (e) => e.classList.remove("zoom-animation");
+const addZoom = () => {
+    imageContainers.map(container => {
+        container.children[0].classList.add("zoom-animation");
+    })
+}
+const removeZoom = () => {
+    imageContainers.map(container => {
+        container.children[0].classList.remove("zoom-animation");
+    })
+}
 
 // n = image width
 // range 0 ---- n/2 ---- n, where n is current/first slide and n/2 is towards middle slide, where 0 is middle slide
@@ -21,7 +28,6 @@ const firstImageSnapEffect = (e) => {
     const imageWidth = e.target.offsetWidth;
     const scroll = (imageWidth - lengthScrolled) > (imageWidth / 2) ? 0 : imageWidth;
     $(e.target.parentNode.parentNode).animate({ scrollLeft: scroll });
-    addZoom(e.target.children[0]); //add zoom effect to image after snap scroll
 }
 
 // n = image width
@@ -42,7 +48,6 @@ const secondImageSnapEffect = (e) => {
         scroll = imageWidth * 2;
 
     $(e.target.parentNode.parentNode).animate({ scrollLeft: scroll });
-    addZoom(e.target.children[0]); //add zoom effect to image after snap scroll
 }
 
 // n = image width
@@ -59,8 +64,7 @@ const thirdImageSnapEffect = (e) => {
     if (scrollDifference > halfImageWidth)
         scroll = imageWidth;
 
-    $(e.target.parentNode.parentNode).animate({ scrollLeft: scroll });
-    addZoom(e.target.children[0]); //add zoom effect to image after snap scroll
+    $(e.target.parentNode.parentNode).animate({ scrollLeft: scroll }); 
 }
 
 
@@ -68,16 +72,19 @@ const thirdImageSnapEffect = (e) => {
 // Drag to scroll slider controls
 slider.addEventListener('mouseleave', (e) => {
     isDown = false
+    addZoom();
 });
 
 slider.addEventListener('mouseup', () => {
     isDown = false
+    addZoom();
 });
 
 slider.addEventListener('mousedown', (e) => {
     isDown = true;
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
+    removeZoom();
 });
 
 slider.addEventListener('mousemove', (e) => {
@@ -85,7 +92,7 @@ slider.addEventListener('mousemove', (e) => {
     e.preventDefault();
 
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1; //scroll-fast
+    const walk = (x - startX) * .8; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
 });
 
@@ -95,20 +102,6 @@ imageContainers[0].addEventListener('mouseup', (e) => firstImageSnapEffect(e));
 imageContainers[1].addEventListener('mouseup', (e) => secondImageSnapEffect(e));
 
 imageContainers[2].addEventListener('mouseup', (e) => thirdImageSnapEffect(e));
-
-// MOUSE DOWN EVENT ON IMAGE CONTAINERS
-imageContainers[0].addEventListener('mousedown', (e) => removeZoom(e));
-
-imageContainers[1].addEventListener('mousedown', (e) => removeZoom(e));
-
-imageContainers[2].addEventListener('mousedown', (e) => removeZoom(e));
-
-// MOUSE MOVE EVENT ON IMAGE CONTAINERS
-imageContainers[0].addEventListener('mousemove', (e) => removeZoom(e));
-
-imageContainers[1].addEventListener('mousemove', (e) => removeZoom(e));
-
-imageContainers[2].addEventListener('mousemove', (e) => removeZoom(e));
 
 // MOUSE LEAVE EVENT ON IMAGE CONTAINERS
 imageContainers[0].addEventListener('mouseleave', (e) => firstImageSnapEffect(e));
