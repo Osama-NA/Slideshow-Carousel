@@ -5,57 +5,113 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- DO NOT change the order of the css files below -->
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="stylesheet" href="./public/css/style.tablet.css" />
+    <link rel="stylesheet" href="./public/css/style.mobile.css" />
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <!-- HEADER NAV BARS -->
-        <header class="header">
-            <nav class="emails">
-                <a href="">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Call us</span>
-                </a>
-                <a href="">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email us</span>
-                </a>
-            </nav>
-            <nav class="socials">
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
+        <!-- HEADER -->
+        <header class="header column">
+
+            <!-- PAGES NAV BAR -->
+            <nav class="pages-nav row">
+                <h1 class="logo">I SAID LOREM</h1>
+                <ul class="links row">
+                    <li class="active-link"><a href="/">home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li class="services">
+                        <div class="services-button row">
+                            <a href="">Services</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul>
+                            <li><a href="">Vestibulum</a></li>
+                            <li><a href="">Mauris aliquet</a></li>
+                            <li><a href="">sollicitudin</a></li>
+                            <li><a href="">Pellentesque</a></li>
+                            <li><a href="">pretium dui</a></li>
+                        </ul>
+                    </li>
+                    <li class="below-services"><a href="">Products</a></li>
+                    <li><a href="">Contact US</a></li>
+                    <div class="mobile-menu-footer">
+                        <div class="socials row">
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </ul>
+                <div class="mobile-menu-button">
+                    <div class="dash dash1"></div>
+                    <div class="dash dash2"></div>
+                    <div class="dash dash3"></div>
+                </div>
             </nav>
         </header>
 
         <!-- SLIDESHOW CONTAINER -->
-        <div class="images-slider">
-            <div class="images">
+        <div class="images-slider column">
+            <div class="images row">
                 <div class="image-container" id="car_1">
-                    <img src="./images/car_1.jpg" class="zoom-animation">
-                    <div class="images-overlay"></div>
+                    <img src="./public/images/715.jpg" class="zoom-animation">
+                    <div class="images-overlay">
+                        <article class="slider-info slide-info-1 column">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>
+                                Proin ultrices vel nunc eu pretium. Morbi posuere neque id urna euismod, in luctus lacus posuere. Nam tristique, dui ac rhoncus sodales, massa velit pulvinar dolor
+                            </p>
+                            <a href="" class="slider-info-button">nunc eu pretium</a>
+                            <div class="slider-info-border"></div>
+                        </article>
+                    </div>
                     </img>
                 </div>
                 <div class="image-container" id="car_2">
-                    <img src="./images/car_2.jpg">
-                    <div class="images-overlay"></div>
+                    <img src="./public/images/715.jpg">
+                    <div class="images-overlay">
+                        <article class="slider-info slide-info-2 column">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>
+                                Proin ultrices vel nunc eu pretium. Morbi posuere neque id urna euismod, in luctus lacus posuere. Nam tristique, dui ac rhoncus sodales, massa velit pulvinar dolor
+                            </p>
+                            <a href="" class="slider-info-button">nunc eu pretium</a>
+                            <div class="slider-info-border"></div>
+                            </article>
+                    </div>
                     </img>
                 </div>
                 <div class="image-container" id="car_3">
-                    <img src="./images/car_3.jpg">
-                    <div class="images-overlay"></div>
+                    <img src="./public/images/715.jpg">
+                    <div class="images-overlay">
+                        <article class="slider-info slide-info-3 column">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>
+                                Proin ultrices vel nunc eu pretium. Morbi posuere neque id urna euismod, in luctus lacus posuere. Nam tristique, dui ac rhoncus sodales, massa velit pulvinar dolor
+                            </p>
+                            <a href="" class="slider-info-button">nunc eu pretium</a>
+                            <div class="slider-info-border"></div>
+                        </article>
+                    </div>
                     </img>
                 </div>
             </div>
 
-            <!-- SLIDES BUTTONS -->
-            <section class="images-slider-footer">
-                <div class="slider-buttons">
-                    <a href="#car_1" id="car-one-button"><i class="far fa-circle"></i></a>
-                    <a href="#car_2" id="car-two-button"><i class="far fa-circle"></i></a>
-                    <a href="#car_3" id="car-three-button"><i class="far fa-circle"></i></a>
+            <!-- SLIDESHOW FOOTER -->
+            <section class="images-slider-footer row">
+                <!-- FOOTER SLIDER BUTTONS-->
+                <div class="slider-buttons row">
+                    <a id="car-one-button"><i class="far fa-circle"></i></a>
+                    <a id="car-two-button"><i class="far fa-circle"></i></a>
+                    <a id="car-three-button"><i class="far fa-circle"></i></a>
                 </div>
             </section>
         </div>
@@ -66,8 +122,7 @@
     <!-- JQUERY CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- SLIDESHOW JAVASCRIPT CODE -->
-    <script src="./js/slideshow.js"></script>
+    <!-- JavaScript -->
+    <script src="./public/js/index.js"></script>
 </body>
-
 </html>

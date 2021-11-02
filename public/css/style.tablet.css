@@ -1,0 +1,82 @@
+@media (max-width: 1200px) and (min-width: 768px) {
+
+    /* SOCIALS NAV BAR  */
+    .header{
+        height: 120px;
+    }
+
+    .pages-nav{
+        padding: 0 1rem;
+    }
+
+    /* PAGES NAV BAR */
+    .pages-nav .links li {
+        font-size: 10px;
+        font-weight: 400;
+        padding: .5rem .8rem;
+    }
+    .pages-nav .services i{
+        font-size: 10px;
+    }
+
+    .pages-nav .services ul{
+        min-width: 150px;
+        top: 2rem;
+    }
+    .pages-nav .services ul li{
+        font-size: 10px;
+        width: 150px;
+    }
+    .pages-nav .services ul li a{
+        padding: .5rem .8rem;
+    }
+
+    /* SLIDER INFO */
+    @keyframes sliderInfoBorderAnimation{
+        from{
+            left: -7.5rem;
+            opacity: 0;
+        }
+        to{
+            left: -.2rem;
+            opacity: 1;
+        }
+    }
+    .slider-info{
+        margin-left: 35px;
+        max-width: 60ch;
+    }
+    .slider-info-border{
+        width: 5px;
+        top: -.1rem;
+        left: -.2rem;
+    }
+    .slider-info h1{
+        font-size: 26px;
+        padding-bottom: .6rem;
+    }
+    .slider-info p{
+        font-size: 12px;
+        font-weight: 300;
+        padding-bottom: .6rem;
+    }
+    .slider-info-button{
+        font-size: 10px;
+        font-weight: 200;
+        padding: .5rem .8rem;
+    }
+
+    /* SLIDER BUTTONS */
+    .slider-buttons{
+        left: 45%;
+    }
+
+    /* IMAGES SLIDER CONTAINER */
+    .images{
+        scroll-snap-type: x mandatory;
+    }
+    .image-container{
+        scroll-snap-align: center;
+    }
+
+}
