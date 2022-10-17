@@ -1,4 +1,4 @@
-# Custom Slideshow with Effects 
+# Custom Slideshow Carousel with animations
 
 ## Technology
 - HTML 
